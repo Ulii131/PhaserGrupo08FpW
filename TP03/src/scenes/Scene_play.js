@@ -58,20 +58,22 @@ class Scene_play extends Phaser.Scene{
     this.player.setVelocityX(-160);
     this.player.anims.play('left', true);
     }
-    else if (this.cursors.right.isDown) {
+      else if (this.cursors.right.isDown) {
     this.player.setVelocityX(160);
     this.player.anims.play('right', true);
     }
-    else {
+      else {
     this.player.setVelocityX(0);
     this.player.anims.play('turn');
     }
-    if (this.cursors.up.isDown && this.player.body.touching.down) {
+      if (this.cursors.up.isDown && this.player.body.touching.down) {
     this.player.setVelocityY(-330);
     }
     }
 
     
+
+
 
 
 
