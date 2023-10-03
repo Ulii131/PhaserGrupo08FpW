@@ -8,7 +8,7 @@ class Scene_play extends Phaser.Scene{
 
   preload(){
     this.load.image('star', '../assets/star.png');
-    //this.load.image('bomb', '../assets/bomb.png');
+    this.load.image('bomb', '../assets/bomb.png');
   }
 
 
@@ -59,23 +59,22 @@ class Scene_play extends Phaser.Scene{
       score += 10;
       scoreText.setText('Score: ' + score);
 
-      if (stars.countActive(true) === 0)
-    {
-        stars.children.iterate(function (child) {
+        if (stars.countActive(true) === 0)
+      {
+          stars.children.iterate(function (child) {
 
-            child.enableBody(true, child.x, 0, true, true);
+              child.enableBody(true, child.x, 0, true, true);
 
-        });
+          });
 
-        var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
+          var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
 
-        var bomb = bombs.create(x, 16, 'bomb');
-        bomb.setBounce(1);
-        bomb.setCollideWorldBounds(true);
-        bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+          var bomb = bombs.create(x, 16, 'bomb');
+          bomb.setBounce(1);
+          bomb.setCollideWorldBounds(true);
+          bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
 
-    }
-
+      }
     }
 
     function hitBomb(player, bomb) {
@@ -87,8 +86,8 @@ class Scene_play extends Phaser.Scene{
       gameOver = true;
     }    
 
-   //CREACION JUGADOR
-    this.player = this.physics.add.sprite(100, 100, 'dude');
+    //CREACION JUGADOR
+    this.player = this.physics.add.sprite(50, 100, 'dude');
     this.player.setBounce(0.3);
     this.player.setCollideWorldBounds(true);
 
@@ -140,7 +139,7 @@ class Scene_play extends Phaser.Scene{
     this.player.anims.play('turn');
     }
       if (this.cursors.up.isDown && this.player.body.touching.down) {
-    this.player.setVelocityY(-330);
+    this.player.setVelocityY(-440);
     }
     }
 }
