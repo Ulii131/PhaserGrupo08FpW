@@ -47,7 +47,7 @@ class Scene_play extends Phaser.Scene{
       child.setBounce(0.5, 1); 
     });
 
-    //funcion recolectar estrellas + puntuacion +  +posicion random bombas 
+    //funcion recolectar estrellas + puntuacion + creacion de nuevas esrtllas al terminar + posicion random bombas 
     function collectStar (player, star)
     {
       star.disableBody(true, true);
