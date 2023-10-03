@@ -1,5 +1,6 @@
 import Bootloader from './scenes/Bootloader.js';
 import Scene_play from './scenes/Scene_play.js';
+import Menu from './scenes/Menu.js'
 
 const config = {
     title: "Estrellas",
@@ -24,7 +25,8 @@ const config = {
     },
     scene: [
         Bootloader,
-        Scene_play
+        Scene_play,
+        Menu
     ]
 };
 

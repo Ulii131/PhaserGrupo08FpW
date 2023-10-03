@@ -17,6 +17,9 @@ class Bootloader extends Phaser.Scene {
         this.load.image('platform','../assets/platform.png');
         this.load.image('sky','../assets/sky.png');
         this.load.image('star','../assets/star.png');
+        this.load.audio('sonidoBG', '../sounds/MenuSound.mp3');
+            this.load.image('MenuBG', '../assets/MenuBG.png');
+            this.load.spritesheet('button', '../assets/StartButton.png', {frameWidth:290, frameHeight:130});
         
     }
 
