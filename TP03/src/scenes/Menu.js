@@ -11,7 +11,22 @@ class Menu extends Phaser.Scene{
     }
 
     create(){
-        this.sonidoBG = this.sound.add(sonidoBG);
+        this.sonido = this.sound.add('sonidoBG');
+        const soundConfig = {
+            volume: 1,
+            loop: true
+        }
+        
+        if(this.sound.locked){
+            this.sonido.play(soundConfig);
+        }else{
+            this.sound.once(Phaser.Sound.Events.UNLOCKED, () => {
+                 this.sonido.play(soundConfig);
+
+            })
+        }
+    
+
         this.add.image(0,0, 'MenuBG');
         this.startButton = this.add.sprite(400,200, 'startButton').setInteractive();
         
